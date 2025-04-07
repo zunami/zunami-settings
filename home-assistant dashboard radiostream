@@ -1,3 +1,9 @@
+# i wanted the tablet, which is connected to a bluetooth speaker, to play a radio stream.
+# i constantly had problems to realize this, because it always tried to find a streaming cast in the network.
+# but there was none, because the tablet, on which the dashboard was displayed, was directly connected to bluetooth. 
+# solution android home assistant app enabled more rights in the basic android settings. also assigned rights in the app settings themselves.
+# named the device correctly in the settings. then installed the HACS mini-media-player extension and with this YAML on the dashboard it worked.
+
 type: custom:mini-media-player
 entity: media_player.tablet_dashboard # YOUR DEVICE
 name: Kronehit Radio # YOUR RADIOSTREAM NAME
