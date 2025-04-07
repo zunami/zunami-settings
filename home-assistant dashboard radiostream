@@ -1,0 +1,23 @@
+type: custom:mini-media-player
+entity: media_player.tablet_dashboard # YOUR DEVICE
+name: Kronehit Radio # YOUR RADIOSTREAM NAME
+icon: mdi:radio
+group: true
+hide:
+  power: true
+background: '/local/images/kronehit_logo.png' # YOUR RADIO STREAM LOGO
+shortcuts:
+  columns: 2
+  buttons:
+    - name: Start Kronehit
+      type: service
+      id: media_player.play_media
+      data:
+        entity_id: media_player.tablet_dashboard # YOUR DEVICE
+        media_content_id: http://raj.krone.at/kronehit-ultra-hd.aac #YOUR RADIO STREAM
+        media_content_type: music
+    - name: Stop
+      type: service
+      id: media_player.media_stop
+      data:
+        entity_id: media_player.tablet_dashboard # YOUR DEVICE
