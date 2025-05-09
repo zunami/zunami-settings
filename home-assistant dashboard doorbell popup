@@ -1,0 +1,18 @@
+# When someone rings the doorbell (Reolink camera), a popup is triggered on my wall-mounted dashboard tablet using Browser Mod in Home Assistant.
+# The popup displays a live camera view from the doorbell, allowing us to quickly see who's at the door.
+# It appears automatically, doesn't close on its own, and uses the fullscreen option for better visibility.
+
+action: browser_mod.popup
+metadata: {}
+data:
+  dismissable: true
+  autoclose: false
+  timeout: 30000
+  size: fullscreen
+  deviceID:
+    - BROWSER_MOD_TABLET_ID
+  content:
+    camera_view: auto
+    type: picture-glance
+    entities: []
+    camera_image: camera.reolink_standardauflosung
