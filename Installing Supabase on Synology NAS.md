@@ -2,10 +2,6 @@
 
 **Complete step-by-step guide for installing Supabase on Synology DSM with Container Manager**
 
-![Supabase + Synology](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white) ![Synology](https://img.shields.io/badge/Synology-B5B5B6?style=for-the-badge&logo=synology&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-
----
-
 ## 📋 Table of Contents
 
 - [Overview](#overview)
