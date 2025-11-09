@@ -1,0 +1,102 @@
+Absolut\! Hier ist die Übersetzung Ihrer Anleitung ins Englische, formatiert als kopierbares Markdown.
+
+-----
+
+````markdown
+# 🚀 Wave Terminal & Ollama: AI Assistance for Sysadmins (Windows)
+
+This guide explains how to connect the modern terminal emulator **Wave Terminal** with your local LLM server **Ollama**. This enables you to use the specialized model **Qwen 2.5 Coder** for admin commands, error analysis, and log inspection directly within your Windows console.
+
+---
+
+## 1. 🖥️ Prerequisites
+
+Ensure that the following components are installed and configured on your systems:
+
+* **Wave Terminal**
+    * Must be installed on your **Windows PC** (where you work).
+* **Ollama Server**
+    * Must be installed and running on your **Mac Mini M4** (IP: `192.168.1.245`).
+    * The server must be reachable over the local network.
+* **AI Model**
+    * The model **`qwen2.5-coder:32b`** must be loaded on the Ollama server.
+    * *Command on the Mac Mini:* `ollama pull qwen2.5-coder:32b`
+
+---
+
+## 2. ⚙️ Configuring AI Providers in Wave Terminal
+
+The connection is established via the **`presets/ai.json`** configuration file in Wave Terminal because Ollama emulates the OpenAI API specification.
+
+### 2.1. Opening the Configuration File
+
+Open the Wave Terminal configuration file directly from the command line within Wave Terminal:
+
+```powershell
+wsh editconfig presets/ai.json
+````
+
+### 2.2. Inserting the Configuration
+
+Insert your working configuration into the file and save it (Pay attention to correct JSON formatting, especially commas if you have other entries):
+
+```json
+{
+  "ai@ollama-qwen-coder": {
+    "displayName": "Ollama - Qwen2.5 Coder 32B",
+    "displayOrder": 3,
+    "aiEnabled": true,
+    "aiBaseUrl": "[http://192.168.1.10:11434/v1](http://192.168.1.245:11434/v1)",
+    "aiModel": "qwen2.5-coder:32b",
+    "aiApiToken": "ollama",
+    "aiRequestTimeoutMs": 600000,
+    "aiHttpTimeoutMs": 600000
+  },
+  "ai@ollama-llama3": {
+    "displayName": "Ollama - llama3.1:8b",
+    "displayOrder": 4,
+    "aiEnabled": true,
+    "aiBaseUrl": "[http://192.168.1.10:11434/v1](http://192.168.1.245:11434/v1)",
+    "aiModel": "llama3.1:8b",
+    "aiApiToken": "ollama"
+  }
+}
+```
+
+> **Note on Timeouts:** The keys `"aiRequestTimeoutMs"` and `"aiHttpTimeoutMs"` with values of **600000** (600 seconds = 10 minutes) are essential to prevent the connection from timing out during complex requests or slower processing by the large model **Qwen 2.5 Coder**.
+
+### 2.3. Activation
+
+**Restart Wave Terminal** for the new AI providers to take effect.
+
+-----
+
+## 3\. 🧪 Usage and Testing the AI Features
+
+After restarting, you can use the AI features directly in your Wave Terminal on Windows.
+
+### 3.1. Direct Command Generation
+
+Use the `/chat` command in the terminal to generate Sysadmin commands. The `qwen2.5-coder:32b` model is ideal for this:
+
+| Purpose | Wave Terminal Input |
+| :--- | :--- |
+| **Generate** | `/chat How do I stop all Docker containers older than 24 hours?` |
+| **Explanation** | `/chat Explain what the command 'kubectl rollout restart' does.` |
+
+### 3.2. Interactive Error Analysis (Chat Panel)
+
+Use the integrated AI chat panel for more complex analysis:
+
+1.  Press the shortcut (often **`Ctrl + Space`**) or click the AI icon.
+2.  **Copy the entire error message** or log snippet into the chat field.
+3.  Ask the question: *`I found this error in my Docker logs. What is the cause and how do I fix the problem?`*
+
+The Qwen model will analyze the error cause based on the logs and propose concrete correction steps.
+
+-----
+
+```
+
+**Möchten Sie, dass ich Ihnen ein komplexes Docker-Szenario für Ihren ersten Test mit Wave Terminal und Qwen erstelle, um die Funktionalität zu überprüfen?**
+```
