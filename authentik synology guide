@@ -1,7 +1,5 @@
 # Authentik on Synology NAS - Complete Guide
 
-![Authentik](https://img.shields.io/badge/Authentik-2025.10.1-blue) ![Synology](https://img.shields.io/badge/Synology-DSM%207.x-orange) ![Docker](https://img.shields.io/badge/Docker-Compose-blue)
-
 > Self-hosted SSO/Identity Provider on Synology NAS with Docker & Portainer. Tested on DS923+, works on DS920+, DS720+, DS420+ and similar.
 
 **⏱️ Setup time: 15 minutes**
