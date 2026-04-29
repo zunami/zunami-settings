@@ -1,4 +1,6 @@
 # Grocy Initial Setup Guide
+https://grocy.info/de 
+https://github.com/grocy/grocy
 
 A community-tested setup guide for Grocy. Covers quantity units, unit conversions, storage locations, and product groups.
 
